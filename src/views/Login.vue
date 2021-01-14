@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="login">
     <div
       class="container w-full p-20 m-4 mx-auto my-16 text-center bg-white border-2 border-dashed border-blueGray-300 h-96 rounded-xl"
     >
@@ -16,7 +16,7 @@
 // @ is an alias to /src
 
 export default {
-  name: "Home",
+  name: "Login",
   components: {}
 };
 </script>
