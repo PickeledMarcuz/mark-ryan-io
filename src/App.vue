@@ -4,7 +4,8 @@
       <div
         class="container flex flex-col flex-wrap p-5 mx-auto md:items-center md:flex-row "
       >
-        <router-link to="/"
+        <router-link
+          to="/"
           class="flex items-center w-40 mb-4 font-medium text-gray-900 title-font md:mb-0"
         >
           <img
