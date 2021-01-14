@@ -6,9 +6,20 @@ import store from "./store";
 // Tailwind CSS
 import "./index.css";
 
+// apoööo
+import VueApollo from "vue-apollo";
+import apolloClient from "./vue-apollo";
+
+Vue.use(VueApollo);
+
+const apolloProvider = new VueApollo({
+  defaultClient: apolloClient
+});
+
 Vue.config.productionTip = false;
 
 new Vue({
+  apolloProvider,
   router,
   store,
   render: h => h(App)
