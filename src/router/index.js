@@ -42,7 +42,6 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Login.vue"),
     meta: {
-      requiresAuth: true,
       hideNavigation: true
     }
   }
