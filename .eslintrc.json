@@ -1,24 +1,21 @@
 {
-    "rules": {},
-    "env": {
-      "es6": true,
-      "commonjs": true,
-      "browser": true
-    },
-    "parserOptions": {
-      "ecmaVersion": 2018,
-      "sourceType": "module"
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:vue/essential",
-      "plugin:prettier/recommended"
-    ],
-    "globals": {
-      "Atomics": "readonly",
-      "SharedArrayBuffer": "readonly"
-    },
-    "plugins": [
-      "vue"
-    ]
-  }
+  "rules": {},
+  "env": {
+    "es6": true,
+    "commonjs": true,
+    "browser": true
+  },
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "extends": ["plugin:vue/essential", "plugin:prettier/recommended"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "plugins": ["vue"]
+}
