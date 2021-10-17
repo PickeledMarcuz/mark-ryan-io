@@ -19,7 +19,7 @@
 
 <script>
 import MrioFooter from "@/components/MrioFooter";
-import MrioHeader from "./components/MrioHeader.vue";
+import MrioHeader from "@/components/MrioHeader.vue";
 
 export default {
   name: "App",

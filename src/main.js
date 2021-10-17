@@ -6,7 +6,7 @@ import store from "./store";
 // Tailwind CSS
 import "./index.css";
 
-// apoööo
+// apollo
 import VueApollo from "vue-apollo";
 import apolloClient from "./vue-apollo";
 
