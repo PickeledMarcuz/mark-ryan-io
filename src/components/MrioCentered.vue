@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: "MrioCentered",
+  name: 'MrioCentered',
   components: {},
   props: {}
 };

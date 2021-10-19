@@ -1,26 +1,16 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-
-// Tailwind CSS
-import "./index.css";
+import { createApp } from 'vue';
+import App from './App.vue';
+import './index.css';
 
 // apollo
-import VueApollo from "vue-apollo";
-import apolloClient from "./vue-apollo";
-
-Vue.use(VueApollo);
+import VueApollo from 'vue-apollo';
+import apolloClient from './vue-apollo';
 
 const apolloProvider = new VueApollo({
   defaultClient: apolloClient
 });
 
-Vue.config.productionTip = false;
+const app = createApp(App);
 
-new Vue({
-  apolloProvider,
-  router,
-  store,
-  render: h => h(App)
-}).$mount("#app");
+app.use(apolloProvider);
+app.mount('#app');

@@ -1,11 +1,11 @@
-import { ApolloClient } from "apollo-client";
-import { createHttpLink } from "apollo-link-http";
-import { InMemoryCache } from "apollo-cache-inmemory";
+import { ApolloClient } from 'apollo-client';
+import { createHttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
 // HTTP connection to the API
 const httpLink = createHttpLink({
   // TODO: setup env and env.test.
-  uri: "http://localhost:1337/graphql"
+  uri: 'http://localhost:1337/graphql'
 });
 
 // Cache implementation

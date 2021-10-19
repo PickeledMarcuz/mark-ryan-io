@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import MrioFooter from "@/components/MrioFooter";
-import MrioHeader from "@/components/MrioHeader.vue";
+import MrioFooter from './components/MrioFooter.vue';
+import MrioHeader from './components/MrioHeader.vue';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     MrioHeader,
     MrioFooter
@@ -46,7 +46,7 @@ export default {
       });
     },
     afterEnter(element) {
-      element.style.height = "auto";
+      element.style.height = 'auto';
     }
   }
 };

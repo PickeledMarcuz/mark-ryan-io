@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: "MrioFooter",
+  name: 'MrioFooter',
   props: {
     company: String
   }
