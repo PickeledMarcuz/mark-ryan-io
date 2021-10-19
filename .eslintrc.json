@@ -12,10 +12,10 @@
     "sourceType": "module",
     "allowImportExportEverywhere": true
   },
-  "extends": ["plugin:vue/essential", "plugin:prettier/recommended"],
+  "extends": ["prettier","plugin:vue/essential", "plugin:prettier/recommended"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "plugins": ["vue"]
+  "plugins": ["vue", "prettier"]
 }
