@@ -6,7 +6,9 @@
     "lint": "eslint --ext .vue --ext .js src/ --fix",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "prod-serve": "vue-cli-service serve",
+    "proid-build": "rm -rf dist && vue-cli-service build"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.6.6",
