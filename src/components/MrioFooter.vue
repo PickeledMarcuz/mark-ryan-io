@@ -4,25 +4,40 @@
       <div
         class="container flex flex-col flex-wrap px-5 py-6 lg:px-20 sm:flex-row"
       >
-        <div class="flex flex-wrap items-center justify-center text-base ">
+        <div class="flex flex-wrap items-center justify-center text-base">
           <p class="mr-5 text-sm text-center text-gray-200">
             © {{ company }} — 2021
           </p>
           <a
             href="#"
-            class="justify-center mr-5 text-sm text-center text-blueGray-200 hover:text-blue-700"
+            class="
+              justify-center
+              mr-5
+              text-sm text-center text-blueGray-200
+              hover:text-blue-700
+            "
           >
             Privacy Policy</a
           >
           <a
             href="#"
-            class="justify-center mr-5 text-sm text-center text-blueGray-200 hover:text-blue-700"
+            class="
+              justify-center
+              mr-5
+              text-sm text-center text-blueGray-200
+              hover:text-blue-700
+            "
           >
             Terms Of Service</a
           >
         </div>
         <span
-          class="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-end"
+          class="
+            inline-flex
+            justify-center
+            mt-2
+            sm:ml-auto sm:mt-0 sm:justify-end
+          "
         >
           <p class="mr-5 text-sm text-center text-gray-200">
             Working Remote Since 2020
@@ -37,8 +52,8 @@
 export default {
   name: 'MrioFooter',
   props: {
-    company: String
-  }
+    company: String,
+  },
 };
 </script>
 

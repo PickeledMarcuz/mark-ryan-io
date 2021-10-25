@@ -25,11 +25,11 @@ export default {
   name: 'App',
   components: {
     MrioHeader,
-    MrioFooter
+    MrioFooter,
   },
   data() {
     return {
-      prevHeight: 0
+      prevHeight: 0,
     };
   },
   methods: {
@@ -47,8 +47,8 @@ export default {
     },
     afterEnter(element) {
       element.style.height = 'auto';
-    }
-  }
+    },
+  },
 };
 </script>
 

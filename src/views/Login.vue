@@ -1,8 +1,17 @@
 <template>
   <div class="login">
-    <section class="flex flex-col items-center h-screen md:flex-row ">
+    <section class="flex flex-col items-center h-screen md:flex-row">
       <div
-        class="relative hidden w-full h-screen bg-gray-400 lg:block md:w-1/3 xl:w-1/3"
+        class="
+          relative
+          hidden
+          w-full
+          h-screen
+          bg-gray-400
+          lg:block
+          md:w-1/3
+          xl:w-1/3
+        "
       >
         <img
           src="https://dummyimage.com/600x500/F3F4F7/64748b"
@@ -11,7 +20,16 @@
         />
         <div class="relative z-10 m-12 text-left">
           <a
-            class="flex items-center w-32 mb-4 font-medium text-gray-900 title-font md:mb-6"
+            class="
+              flex
+              items-center
+              w-32
+              mb-4
+              font-medium
+              text-gray-900
+              title-font
+              md:mb-6
+            "
           >
             <img
               class="h-12 w-12 profile-pic bg-white rounded-xl"
@@ -20,7 +38,15 @@
             />
           </a>
           <h1
-            class="mb-2 text-2xl font-semibold tracking-tighter text-blue-700 tsm:text-5xl title-font"
+            class="
+              mb-2
+              text-2xl
+              font-semibold
+              tracking-tighter
+              text-blue-700
+              tsm:text-5xl
+              title-font
+            "
           >
             Discover 100+
             <br />
@@ -29,18 +55,52 @@
         </div>
       </div>
       <div
-        class="flex w-full h-screen px-6 bg-blue-1300 md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12 items-left justify-left"
+        class="
+          flex
+          w-full
+          h-screen
+          px-6
+          bg-blue-1300
+          md:max-w-md
+          lg:max-w-full
+          md:mx-auto md:w-1/2
+          xl:w-1/3
+          lg:px-16
+          xl:px-12
+          items-left
+          justify-left
+        "
       >
         <div class="w-full py-32 lg:py-6 lg:h-100">
           <h1
-            class="my-12 text-2xl font-semibold tracking-tighter text-blue-700 sm:text-3xl title-font"
+            class="
+              my-12
+              text-2xl
+              font-semibold
+              tracking-tighter
+              text-blue-700
+              sm:text-3xl
+              title-font
+            "
           >
             Sign Up to a new world.
           </h1>
           <div class="flex justify-enter">
             <button
               type="button"
-              class="inline-flex w-full px-4 py-3 font-semibold text-blue-800 border border-gray-300 rounded-lg bg-blue-1300 hover:bg-blue-800 hover:text-white focus:bg-gray-100"
+              class="
+                inline-flex
+                w-full
+                px-4
+                py-3
+                font-semibold
+                text-blue-800
+                border border-gray-300
+                rounded-lg
+                bg-blue-1300
+                hover:bg-blue-800 hover:text-white
+                focus:bg-gray-100
+              "
             >
               <div class="flex items-center justify-center">
                 <svg
@@ -79,14 +139,25 @@
                     d="M48 48L17 24l-4-3 35-10z"
                   />
                 </svg>
-                <span class="ml-4">
-                  Log in with Google
-                </span>
+                <span class="ml-4"> Log in with Google </span>
               </div>
             </button>
             <button
               type="button"
-              class="inline-flex px-4 py-3 ml-8 font-semibold text-blue-800 border border-gray-300 rounded-lg bg-blue-1300 hover:bg-blue-800 focus:bg-gray-100 hover:text-blue-500"
+              class="
+                inline-flex
+                px-4
+                py-3
+                ml-8
+                font-semibold
+                text-blue-800
+                border border-gray-300
+                rounded-lg
+                bg-blue-1300
+                hover:bg-blue-800
+                focus:bg-gray-100
+                hover:text-blue-500
+              "
             >
               <div class="flex items-center justify-center">
                 <svg
@@ -107,7 +178,14 @@
           <form class="mt-6" action="#" method="POST">
             <div>
               <label
-                class="block text-xs font-medium leading-relaxed tracking-tighter text-gray-700"
+                class="
+                  block
+                  text-xs
+                  font-medium
+                  leading-relaxed
+                  tracking-tighter
+                  text-gray-700
+                "
                 >Email Address</label
               >
               <input
@@ -115,7 +193,18 @@
                 name=""
                 id=""
                 placeholder="Your Email "
-                class="w-full px-4 py-2 mt-2 text-base bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                class="
+                  w-full
+                  px-4
+                  py-2
+                  mt-2
+                  text-base
+                  bg-gray-100
+                  border-transparent
+                  rounded-lg
+                  ext-blue-700
+                  focus:border-gray-500
+                "
                 autofocus
                 autocomplete
                 required
@@ -123,7 +212,14 @@
             </div>
             <div class="mt-4">
               <label
-                class="block text-xs font-medium leading-relaxed tracking-tighter text-gray-700"
+                class="
+                  block
+                  text-xs
+                  font-medium
+                  leading-relaxed
+                  tracking-tighter
+                  text-gray-700
+                "
                 >Password</label
               >
               <input
@@ -132,20 +228,56 @@
                 id=""
                 placeholder="Your Password"
                 minlength="6"
-                class="w-full px-4 py-2 text-base bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                class="
+                  w-full
+                  px-4
+                  py-2
+                  text-base
+                  bg-gray-100
+                  border-transparent
+                  rounded-lg
+                  ext-blue-700
+                  focus:border-gray-500
+                "
                 required
               />
             </div>
             <div class="mt-2 text-right">
               <a
                 href="#"
-                class="text-sm font-semibold leading-relaxed text-gray-700 hover:text-blue-700 focus:text-blue-700"
+                class="
+                  text-sm
+                  font-semibold
+                  leading-relaxed
+                  text-gray-700
+                  hover:text-blue-700
+                  focus:text-blue-700
+                "
                 >Forgot Password?</a
               >
             </div>
             <button
               type="submit"
-              class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:shadow-outline focus:outline-none"
+              class="
+                block
+                w-full
+                px-4
+                py-3
+                mt-6
+                font-semibold
+                text-white
+                transition
+                duration-500
+                ease-in-out
+                transform
+                rounded-lg
+                bg-gradient-to-r
+                from-blue-700
+                hover:from-blue-600
+                to-blue-600
+                hover:to-blue-700
+                focus:shadow-outline focus:outline-none
+              "
             >
               Log In
             </button>
@@ -167,7 +299,7 @@
 
 export default {
   name: 'Login',
-  components: {}
+  components: {},
 };
 </script>
 

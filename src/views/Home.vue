@@ -2,26 +2,63 @@
   <div class="home">
     <section class="text-gray-700 body-font">
       <div
-        class="container flex flex-col items-center px-5 py-16 mx-auto lg:px-20 lg:py-24 md:flex-row"
+        class="
+          container
+          flex flex-col
+          items-center
+          px-5
+          py-16
+          mx-auto
+          lg:px-20 lg:py-24
+          md:flex-row
+        "
       >
         <div
-          class="flex flex-col items-center w-full pt-0 mb-16 text-center lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 lg:mr-20 md:items-start md:text-left md:mb-0 lg:text-left"
+          class="
+            flex flex-col
+            items-center
+            w-full
+            pt-0
+            mb-16
+            text-center
+            lg:flex-grow
+            md:w-1/2
+            lg:pr-24
+            md:pr-16
+            lg:mr-20
+            md:items-start md:text-left md:mb-0
+            lg:text-left
+          "
         >
           <h1
-            class="mb-8 text-2xl font-bold tracking-tighter text-center text-blue-800 lg:text-left lg:text-2xl title-font"
+            class="
+              mb-8
+              text-2xl
+              font-bold
+              tracking-tighter
+              text-center text-blue-800
+              lg:text-left lg:text-2xl
+              title-font
+            "
           >
             A pretty long lenght display headline ready to convert visitors into
             users.
           </h1>
           <p
-            class="mb-8 text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl"
+            class="
+              mb-8
+              text-base
+              leading-relaxed
+              text-center text-gray-700
+              lg:text-left lg:text-1xl
+            "
           >
             This text will be the most amazing thing you read. Truly life
             changing. It's purpose is to inspire you and show you the tools Mark
             will use to help you in your digital journey.
           </p>
           <div
-            class="flex flex-wrap w-full mt-2 -mx-4 text-center lg:text-left "
+            class="flex flex-wrap w-full mt-2 -mx-4 text-center lg:text-left"
           >
             <div class="w-1/4 p-4 mt-4 sm:w-1/4">
               <svg
@@ -143,7 +180,7 @@
         </div>
         <div class="w-5/6 lg:max-w-lg lg:w-full md:w-1/2">
           <img
-            class="object-cover object-center rounded-lg "
+            class="object-cover object-center rounded-lg"
             alt="hero"
             src="https://dummyimage.com/720x600/F3F4F7/8693ac"
           />
@@ -157,7 +194,19 @@
           <div class="px-8 py-6 lg:w-1/3 md:w-full">
             <div class="flex items-center mb-3">
               <div
-                class="inline-flex items-center justify-center flex-shrink-0 w-12 h-12 mb-5 mr-3 text-blue-800 bg-gray-200 rounded-full"
+                class="
+                  inline-flex
+                  items-center
+                  justify-center
+                  flex-shrink-0
+                  w-12
+                  h-12
+                  mb-5
+                  mr-3
+                  text-blue-800
+                  bg-gray-200
+                  rounded-full
+                "
               >
                 <svg
                   class="w-6 h-6"
@@ -174,7 +223,14 @@
                 </svg>
               </div>
               <h2
-                class="mb-3 text-lg font-semibold text-gray-700 lg:text-2xl title-font"
+                class="
+                  mb-3
+                  text-lg
+                  font-semibold
+                  text-gray-700
+                  lg:text-2xl
+                  title-font
+                "
               >
                 Longer Information 1
               </h2>
@@ -185,7 +241,15 @@
             </p>
             <a
               href="#"
-              class="inline-flex items-center font-semibold text-blue-700 md:mb-2 lg:mb-0 hover:text-blue-400 "
+              class="
+                inline-flex
+                items-center
+                font-semibold
+                text-blue-700
+                md:mb-2
+                lg:mb-0
+                hover:text-blue-400
+              "
             >
               Learn More
               <svg
@@ -206,7 +270,19 @@
           <div class="px-8 py-6 lg:w-1/3 md:w-full">
             <div class="flex items-center mb-3">
               <div
-                class="inline-flex items-center justify-center flex-shrink-0 w-12 h-12 mb-5 mr-3 text-blue-800 bg-gray-200 rounded-full"
+                class="
+                  inline-flex
+                  items-center
+                  justify-center
+                  flex-shrink-0
+                  w-12
+                  h-12
+                  mb-5
+                  mr-3
+                  text-blue-800
+                  bg-gray-200
+                  rounded-full
+                "
               >
                 <svg
                   class="w-6 h-6"
@@ -223,7 +299,14 @@
                 </svg>
               </div>
               <h2
-                class="mb-3 text-lg font-semibold text-gray-700 lg:text-2xl title-font"
+                class="
+                  mb-3
+                  text-lg
+                  font-semibold
+                  text-gray-700
+                  lg:text-2xl
+                  title-font
+                "
               >
                 Longer Information 2
               </h2>
@@ -234,7 +317,15 @@
             </p>
             <a
               href="#"
-              class="inline-flex items-center font-semibold text-blue-700 md:mb-2 lg:mb-0 hover:text-blue-400 "
+              class="
+                inline-flex
+                items-center
+                font-semibold
+                text-blue-700
+                md:mb-2
+                lg:mb-0
+                hover:text-blue-400
+              "
             >
               Learn More
               <svg
@@ -255,7 +346,19 @@
           <div class="px-8 py-6 lg:w-1/3 md:w-full">
             <div class="flex items-center mb-3">
               <div
-                class="inline-flex items-center justify-center flex-shrink-0 w-12 h-12 mb-5 mr-3 text-blue-800 bg-gray-200 rounded-full"
+                class="
+                  inline-flex
+                  items-center
+                  justify-center
+                  flex-shrink-0
+                  w-12
+                  h-12
+                  mb-5
+                  mr-3
+                  text-blue-800
+                  bg-gray-200
+                  rounded-full
+                "
               >
                 <svg
                   class="w-6 h-6"
@@ -272,7 +375,14 @@
                 </svg>
               </div>
               <h2
-                class="mb-3 text-lg font-semibold text-gray-700 lg:text-2xl title-font"
+                class="
+                  mb-3
+                  text-lg
+                  font-semibold
+                  text-gray-700
+                  lg:text-2xl
+                  title-font
+                "
               >
                 Longer Information 3
               </h2>
@@ -283,7 +393,15 @@
             </p>
             <a
               href="#"
-              class="inline-flex items-center font-semibold text-blue-700 md:mb-2 lg:mb-0 hover:text-blue-400 "
+              class="
+                inline-flex
+                items-center
+                font-semibold
+                text-blue-700
+                md:mb-2
+                lg:mb-0
+                hover:text-blue-400
+              "
             >
               Learn More
               <svg
@@ -312,7 +430,7 @@
 
 export default {
   name: 'Home',
-  components: {}
+  components: {},
 };
 </script>
 

@@ -4,5 +4,5 @@ export default {
   '/blog': 'Blog',
   '/contact': 'Contact',
   '/login': 'Login',
-  '/services': 'Services'
+  '/services': 'Services',
 };

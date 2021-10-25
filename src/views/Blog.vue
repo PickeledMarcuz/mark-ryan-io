@@ -4,19 +4,42 @@
       <div class="container px-8 mx-auto py-36 lg:px-4">
         <div class="flex flex-col w-full mb-12 text-left lg:text-center">
           <h2
-            class="mb-1 text-xs font-semibold tracking-widest text-blue-600 uppercase title-font"
+            class="
+              mb-1
+              text-xs
+              font-semibold
+              tracking-widest
+              text-blue-600
+              uppercase
+              title-font
+            "
           >
             a great header right here
           </h2>
           <h1
-            class="mb-6 text-2xl font-semibold tracking-tighter text-blue-800 sm:text-6xl title-font"
+            class="
+              mb-6
+              text-2xl
+              font-semibold
+              tracking-tighter
+              text-blue-800
+              sm:text-6xl
+              title-font
+            "
           >
             A Long headline
             <br class="" />
             to convey your users.
           </h1>
           <p
-            class="mx-auto text-base font-medium leading-relaxed text-gray-700 lg:w-1/2"
+            class="
+              mx-auto
+              text-base
+              font-medium
+              leading-relaxed
+              text-gray-700
+              lg:w-1/2
+            "
           >
             Tailwind CSS templates with a wicked design. Professionally designed
             and 100% responsive static templates for startups and personal
@@ -38,7 +61,14 @@
               alt="content"
             />
             <h2
-              class="mb-3 text-lg font-semibold text-gray-700 lg:text-2xl title-font"
+              class="
+                mb-3
+                text-lg
+                font-semibold
+                text-gray-700
+                lg:text-2xl
+                title-font
+              "
             >
               Information 1
             </h2>
@@ -54,7 +84,14 @@
               alt="content"
             />
             <h2
-              class="mb-3 text-lg font-semibold text-gray-700 lg:text-2xl title-font"
+              class="
+                mb-3
+                text-lg
+                font-semibold
+                text-gray-700
+                lg:text-2xl
+                title-font
+              "
             >
               Information 2
             </h2>
@@ -70,7 +107,14 @@
               alt="content"
             />
             <h2
-              class="mb-3 text-lg font-semibold text-gray-700 lg:text-2xl title-font"
+              class="
+                mb-3
+                text-lg
+                font-semibold
+                text-gray-700
+                lg:text-2xl
+                title-font
+              "
             >
               Information 3
             </h2>
@@ -86,7 +130,14 @@
               alt="content"
             />
             <h2
-              class="mb-3 text-lg font-semibold text-gray-700 lg:text-2xl title-font"
+              class="
+                mb-3
+                text-lg
+                font-semibold
+                text-gray-700
+                lg:text-2xl
+                title-font
+              "
             >
               Information 4 > Information 4
             </h2>
@@ -107,7 +158,7 @@
 
 export default {
   name: 'Blog',
-  components: {}
+  components: {},
 };
 </script>
 
