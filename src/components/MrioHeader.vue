@@ -24,7 +24,7 @@
       >
         <img
           class="h-12 w-12 profile-pic bg-white rounded-xl"
-          src="../assets/logo.png"
+          src="../assets/Logo.png"
           alt="brand logo"
         />
       </router-link>
