@@ -1,17 +1,19 @@
 <template>
-  <div id="app">
+  <div id="app" :style="{ minHeight: minHeight + 'px' }">
     <mrio-header />
 
     <!-- Content from Vue application -->
-    <transition
-      name="fade"
-      mode="out-in"
-      @beforeLeave="beforeLeave"
-      @enter="enter"
-      @afterEnter="afterEnter"
-    >
-      <router-view />
-    </transition>
+    <main class="flex-grow w-full relative">
+      <transition
+        name="fade"
+        mode="out-in"
+        @before-leave="beforeLeave"
+        @enter="enter"
+        @after-enter="afterEnter"
+      >
+        <router-view />
+      </transition>
+    </main>
 
     <mrio-footer company="MarkRyanIO" />
   </div>
@@ -30,9 +32,20 @@ export default {
   data() {
     return {
       prevHeight: 0,
+      minHeight: 0,
     };
   },
+  mounted() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  },
   methods: {
+    handleResize() {
+      this.minHeight = window.innerHeight;
+    },
     beforeLeave(element) {
       this.prevHeight = getComputedStyle(element).height;
     },
@@ -59,6 +72,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
 }
 
 .fade-enter-active,
