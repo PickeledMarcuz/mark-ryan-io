@@ -10,34 +10,19 @@
           </p>
           <a
             href="#"
-            class="
-              justify-center
-              mr-5
-              text-sm text-center text-blueGray-200
-              hover:text-blue-700
-            "
+            class="justify-center mr-5 text-sm text-center text-blueGray-200 hover:text-blue-700"
           >
             Privacy Policy</a
           >
           <a
             href="#"
-            class="
-              justify-center
-              mr-5
-              text-sm text-center text-blueGray-200
-              hover:text-blue-700
-            "
+            class="justify-center mr-5 text-sm text-center text-blueGray-200 hover:text-blue-700"
           >
             Terms Of Service</a
           >
         </div>
         <span
-          class="
-            inline-flex
-            justify-center
-            mt-2
-            sm:ml-auto sm:mt-0 sm:justify-end
-          "
+          class="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-end"
         >
           <p class="mr-5 text-sm text-center text-gray-200">
             Working Remote Since 2020
