@@ -33,12 +33,27 @@
         />
       </div>
     </div>
+
+    <div class="panel about-credentials text-left">
+      <p class="eyebrow">Credentials And Working Style</p>
+      <div class="about-credentials__grid">
+        <info-card
+          v-for="credential in credentials"
+          :key="credential.title"
+          :eyebrow="credential.eyebrow"
+          :title="credential.title"
+          :body="credential.body"
+          :eyebrow-muted="true"
+        />
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
 import InfoCard from '../components/InfoCard.vue';
 import SectionIntro from '../components/SectionIntro.vue';
+import { aboutContent } from '../content/siteContent';
 
 export default {
   name: 'About',
@@ -48,38 +63,7 @@ export default {
   },
   data() {
     return {
-      approach: [
-        {
-          title: 'Diagnose clearly',
-          body: 'Understand the technical landscape, organizational constraints, and risk profile before recommending action.',
-        },
-        {
-          title: 'Prioritize what matters',
-          body: 'Focus on changes that improve resilience, delivery performance, and decision quality at the same time.',
-        },
-        {
-          title: 'Execute pragmatically',
-          body: 'Support teams with a balance of strategic guidance and detailed technical problem solving.',
-        },
-      ],
-      profiles: [
-        {
-          title: 'Advisor',
-          body: 'Translating technical risk and opportunity into decisions leadership can act on.',
-        },
-        {
-          title: 'Engineer',
-          body: 'Bringing hands-on depth to architecture, modernization, and complex implementation work.',
-        },
-        {
-          title: 'Security partner',
-          body: 'Helping teams reduce exposure while staying practical about delivery realities.',
-        },
-        {
-          title: 'Transformation lead',
-          body: 'Structuring initiatives so people, process, and technology move together.',
-        },
-      ],
+      ...aboutContent,
     };
   },
 };
@@ -123,6 +107,18 @@ export default {
   margin-top: 2rem;
 }
 
+.about-credentials {
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.about-credentials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
 .about-approach__grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 1.25rem;
@@ -131,7 +127,8 @@ export default {
 @media (max-width: 980px) {
   .about-grid,
   .about-profile__grid,
-  .about-approach__grid {
+  .about-approach__grid,
+  .about-credentials__grid {
     grid-template-columns: 1fr;
   }
 }

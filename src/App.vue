@@ -45,9 +45,13 @@ export default {
       const route = routeMap[this.currentPath];
       return (route && route.component) || routeMap['/'].component;
     },
+    currentRoute() {
+      return routeMap[this.currentPath] || routeMap['/'];
+    },
   },
   mounted() {
     this.initializeTheme();
+    this.updateDocumentMetadata();
     window.addEventListener('popstate', this.handlePopState);
   },
   beforeUnmount() {
@@ -74,6 +78,7 @@ export default {
     },
     handlePopState() {
       this.currentPath = this.normalizePath(window.location.pathname);
+      this.updateDocumentMetadata();
     },
     navigate(path) {
       const nextPath = this.normalizePath(path);
@@ -85,7 +90,30 @@ export default {
 
       window.history.pushState({}, '', nextPath);
       this.currentPath = nextPath;
+      this.updateDocumentMetadata();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    updateDocumentMetadata() {
+      if (!this.currentRoute) {
+        return;
+      }
+
+      document.title = this.currentRoute.title;
+
+      const descriptionTag = document.querySelector('meta[name="description"]');
+      if (descriptionTag) {
+        descriptionTag.setAttribute('content', this.currentRoute.description);
+      }
+
+      const ogTitleTag = document.querySelector('meta[property="og:title"]');
+      if (ogTitleTag) {
+        ogTitleTag.setAttribute('content', this.currentRoute.title);
+      }
+
+      const ogDescriptionTag = document.querySelector('meta[property="og:description"]');
+      if (ogDescriptionTag) {
+        ogDescriptionTag.setAttribute('content', this.currentRoute.description);
+      }
     },
     toggleTheme() {
       this.theme = this.theme === 'dark' ? 'light' : 'dark';

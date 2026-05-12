@@ -34,12 +34,24 @@
         </div>
       </div>
     </div>
+
+    <div class="panel contact-models text-left">
+      <section-intro
+        eyebrow="Good Reasons To Reach Out"
+        title="Use the site as a starting point when you need judgment, technical depth, or momentum."
+        :level="2"
+      />
+      <ul class="contact-models__list">
+        <li v-for="model in engagementModels" :key="model">{{ model }}</li>
+      </ul>
+    </div>
   </section>
 </template>
 
 <script>
 import InfoCard from '../components/InfoCard.vue';
 import SectionIntro from '../components/SectionIntro.vue';
+import { contactContent } from '../content/siteContent';
 
 export default {
   name: 'Contact',
@@ -49,20 +61,7 @@ export default {
   },
   data() {
     return {
-      channels: [
-        {
-          title: 'Strategic discussion',
-          body: 'For leadership teams exploring security, engineering, or transformation priorities.',
-        },
-        {
-          title: 'Technical advisory',
-          body: 'For architecture reviews, delivery issues, or high-stakes implementation decisions.',
-        },
-        {
-          title: 'Consulting engagement',
-          body: 'For structured support spanning diagnosis, planning, and execution.',
-        },
-      ],
+      ...contactContent,
     };
   },
 };
@@ -110,12 +109,28 @@ export default {
   margin-top: 2rem;
   padding: 1.5rem;
   border-radius: 20px;
-  background: #f1f5f9;
+  background: var(--surface-gray);
 }
 
 .contact-note__label {
   margin-top: 0;
-  color: #64748b;
+  color: var(--text-muted);
+}
+
+.contact-models {
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.contact-models__list {
+  margin-top: 1.5rem;
+  padding-left: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+
+.contact-models__list li + li {
+  margin-top: 0.6rem;
 }
 
 @media (max-width: 980px) {

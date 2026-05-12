@@ -83,6 +83,27 @@
     </section>
 
     <section class="section-shell site-section">
+      <div class="proof-block">
+        <section-intro
+          eyebrow="Why It Resonates"
+          title="Built to create confidence with both executives and delivery teams."
+          :level="2"
+          accent
+        />
+        <div class="proof-grid">
+          <info-card
+            v-for="item in proof"
+            :key="item.title"
+            :eyebrow="item.eyebrow"
+            :title="item.title"
+            :body="item.body"
+            :eyebrow-muted="true"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell site-section">
       <div class="panel-dark themes-panel">
         <div class="themes-grid">
           <section-intro
@@ -103,12 +124,32 @@
         </div>
       </div>
     </section>
+
+    <section class="section-shell site-section">
+      <div class="audience-block">
+        <section-intro
+          eyebrow="Who I Help"
+          title="Best suited to organizations where technical decisions carry strategic weight."
+          :level="2"
+        />
+        <div class="audience-grid">
+          <info-card
+            v-for="audience in audiences"
+            :key="audience.title"
+            :eyebrow="audience.eyebrow"
+            :title="audience.title"
+            :body="audience.body"
+          />
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import InfoCard from '../components/InfoCard.vue';
 import SectionIntro from '../components/SectionIntro.vue';
+import { homeContent } from '../content/siteContent';
 
 export default {
   name: 'Home',
@@ -119,60 +160,7 @@ export default {
   emits: ['navigate'],
   data() {
     return {
-      capabilities: [
-        {
-          eyebrow: 'Cybersecurity Expert',
-          title: 'Protecting systems, operations, and trust.',
-          body: 'Security reviews, secure architecture guidance, control design, and pragmatic roadmaps that help teams reduce exposure without slowing delivery.',
-        },
-        {
-          eyebrow: 'Senior Software Engineer',
-          title: 'Building and modernizing business-critical platforms.',
-          body: 'From architecture to implementation, I help teams improve reliability, developer velocity, and maintainability where it matters most.',
-        },
-        {
-          eyebrow: 'Management Consultant',
-          title: 'Turning technical complexity into executable decisions.',
-          body: 'Stakeholder alignment, prioritization, and transformation plans that give leadership a clear path from analysis to action.',
-        },
-      ],
-      engagementThemes: [
-        {
-          title: 'Board and executive advisory',
-          body: 'Clear guidance on cyber risk, delivery risk, and investment priorities.',
-        },
-        {
-          title: 'Architecture and engineering strategy',
-          body: 'Decisions that support secure growth, resilience, and delivery speed.',
-        },
-        {
-          title: 'Transformation planning',
-          body: 'Practical roadmaps for legacy modernization, operating model change, and capability uplift.',
-        },
-        {
-          title: 'Technical problem solving',
-          body: 'Hands-on support where the details matter and leadership still needs confidence.',
-        },
-      ],
-      heroMetrics: [
-        {
-          label: 'Cybersecurity',
-          title: 'Risk reduction, resilience, and secure-by-design delivery.',
-        },
-        {
-          label: 'Software engineering',
-          title: 'Hands-on architecture, modernization, and technical leadership.',
-        },
-        {
-          label: 'Management consulting',
-          title: 'Executive alignment, prioritization, and transformation planning.',
-        },
-      ],
-      positioningItems: [
-        'Security and delivery transformation',
-        'Technical due diligence and remediation planning',
-        'Architecture and leadership support for complex products',
-      ],
+      ...homeContent,
     };
   },
 };
@@ -283,17 +271,17 @@ export default {
 .positioning-card {
   padding: 1.5rem;
   border-radius: 20px;
-  background: #f1f5f9;
+  background: var(--surface-gray);
 }
 
 .positioning-card__label {
-  color: #64748b;
+  color: var(--text-muted);
 }
 
 .positioning-list {
   padding-left: 1.2rem;
   margin-top: 1rem;
-  color: #334155;
+  color: var(--text);
 }
 
 .positioning-list li + li {
@@ -311,6 +299,26 @@ export default {
   text-align: left;
 }
 
+.proof-block,
+.audience-block {
+  display: grid;
+  gap: 2rem;
+}
+
+.proof-grid,
+.audience-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.proof-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.audience-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .themes-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -324,8 +332,10 @@ export default {
   .hero-grid,
   .positioning-grid,
   .capability-grid,
+  .proof-grid,
   .themes-grid,
-  .themes-cards {
+  .themes-cards,
+  .audience-grid {
     grid-template-columns: 1fr;
   }
 }

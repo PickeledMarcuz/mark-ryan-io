@@ -24,6 +24,7 @@
 <script>
 import InfoCard from '../components/InfoCard.vue';
 import SectionIntro from '../components/SectionIntro.vue';
+import { blogContent } from '../content/siteContent';
 
 export default {
   name: 'Blog',
@@ -33,23 +34,7 @@ export default {
   },
   data() {
     return {
-      topics: [
-        {
-          eyebrow: 'Cybersecurity',
-          title: 'Security as an operational capability',
-          body: 'Writing on governance, controls, resilience, and how to build secure-by-design habits into delivery teams.',
-        },
-        {
-          eyebrow: 'Engineering',
-          title: 'Better systems, better technical decisions',
-          body: 'Commentary on architecture, modernization, reliability, and leadership patterns that help teams scale responsibly.',
-        },
-        {
-          eyebrow: 'Consulting',
-          title: 'Turning ambiguity into action',
-          body: 'Thought pieces on transformation, prioritization, and decision frameworks for complex technology environments.',
-        },
-      ],
+      ...blogContent,
     };
   },
 };

@@ -291,6 +291,14 @@ button {
   line-height: 1.8;
 }
 
+.panel-dark .page-title {
+  color: #ffffff;
+}
+
+.panel-dark .page-copy {
+  color: var(--text-soft);
+}
+
 .stack-sm > * + * {
   margin-top: 0.75rem;
 }

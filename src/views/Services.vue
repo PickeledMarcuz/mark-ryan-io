@@ -36,12 +36,32 @@
         </div>
       </div>
     </div>
+
+    <div class="panel service-models">
+      <section-intro
+        eyebrow="Engagement Models"
+        title="Flexible support depending on the decision, the timeline, and the depth required."
+        :level="2"
+        accent
+      />
+      <div class="service-models__grid">
+        <info-card
+          v-for="model in serviceModels"
+          :key="model.title"
+          :eyebrow="model.eyebrow"
+          :title="model.title"
+          :body="model.body"
+          :eyebrow-muted="true"
+        />
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
 import InfoCard from '../components/InfoCard.vue';
 import SectionIntro from '../components/SectionIntro.vue';
+import { servicesContent } from '../content/siteContent';
 
 export default {
   name: 'Services',
@@ -51,29 +71,7 @@ export default {
   },
   data() {
     return {
-      outcomes: [
-        'Reduced security and delivery risk',
-        'Sharper technical and investment decisions',
-        'Clearer modernization priorities',
-        'Better alignment between leadership and delivery',
-      ],
-      services: [
-        {
-          eyebrow: '01',
-          title: 'Cybersecurity advisory',
-          body: 'Security posture reviews, secure architecture guidance, risk interpretation, and remediation planning built for real operating environments.',
-        },
-        {
-          eyebrow: '02',
-          title: 'Engineering leadership',
-          body: 'Architecture reviews, modernization strategy, delivery recovery, and leadership support for complex platforms and product teams.',
-        },
-        {
-          eyebrow: '03',
-          title: 'Management consulting',
-          body: 'Operating model alignment, transformation roadmaps, stakeholder coordination, and decision support for strategic initiatives.',
-        },
-      ],
+      ...servicesContent,
     };
   },
 };
@@ -114,10 +112,23 @@ export default {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.service-models {
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.service-models__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
 @media (max-width: 980px) {
   .services-grid,
   .service-outcomes__grid,
-  .service-outcomes__cards {
+  .service-outcomes__cards,
+  .service-models__grid {
     grid-template-columns: 1fr;
   }
 }
