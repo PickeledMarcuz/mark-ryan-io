@@ -1,25 +1,31 @@
 <template>
-  <div id="app">
-    <mrio-header />
+  <div id="app" class="site-shell">
+    <mrio-header
+      :routes="routes"
+      :current-path="currentPath"
+      :theme="theme"
+      @navigate="navigate"
+      @toggle-theme="toggleTheme"
+    />
 
-    <!-- Content from Vue application -->
-    <transition
-      name="fade"
-      mode="out-in"
-      @beforeLeave="beforeLeave"
-      @enter="enter"
-      @afterEnter="afterEnter"
-    >
-      <router-view />
-    </transition>
+    <main class="page-frame">
+      <transition name="fade" mode="out-in">
+        <component
+          :is="currentView"
+          :key="currentPath"
+          @navigate="navigate"
+        />
+      </transition>
+    </main>
 
-    <mrio-footer company="MarkRyanIO" />
+    <mrio-footer @navigate="navigate" />
   </div>
 </template>
 
 <script>
 import MrioFooter from './components/MrioFooter.vue';
 import MrioHeader from './components/MrioHeader.vue';
+import { routeMap, routes } from './routes';
 
 export default {
   name: 'App',
@@ -29,24 +35,62 @@ export default {
   },
   data() {
     return {
-      prevHeight: 0,
+      currentPath: this.normalizePath(window.location.pathname),
+      routes,
+      theme: 'light',
     };
   },
+  computed: {
+    currentView() {
+      const route = routeMap[this.currentPath];
+      return (route && route.component) || routeMap['/'].component;
+    },
+  },
+  mounted() {
+    this.initializeTheme();
+    window.addEventListener('popstate', this.handlePopState);
+  },
+  beforeUnmount() {
+    window.removeEventListener('popstate', this.handlePopState);
+  },
   methods: {
-    beforeLeave(element) {
-      this.prevHeight = getComputedStyle(element).height;
-    },
-    enter(element) {
-      const { height } = getComputedStyle(element);
+    initializeTheme() {
+      const savedTheme = window.localStorage.getItem('mrio-theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-      element.style.height = this.prevHeight;
-
-      setTimeout(() => {
-        element.style.height = height;
-      });
+      this.theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', this.theme);
     },
-    afterEnter(element) {
-      element.style.height = 'auto';
+    normalizePath(path) {
+      if (!path || path === '') {
+        return '/';
+      }
+
+      if (path.length > 1 && path.endsWith('/')) {
+        return path.slice(0, -1);
+      }
+
+      return routeMap[path] ? path : '/';
+    },
+    handlePopState() {
+      this.currentPath = this.normalizePath(window.location.pathname);
+    },
+    navigate(path) {
+      const nextPath = this.normalizePath(path);
+
+      if (nextPath === this.currentPath) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      window.history.pushState({}, '', nextPath);
+      this.currentPath = nextPath;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    toggleTheme() {
+      this.theme = this.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', this.theme);
+      window.localStorage.setItem('mrio-theme', this.theme);
     },
   },
 };
@@ -54,23 +98,29 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  min-height: 100vh;
+}
+
+.site-shell {
+  background:
+    radial-gradient(circle at top left, var(--shell-glow-left), transparent 30%),
+    radial-gradient(circle at top right, var(--shell-glow-right), transparent 24%),
+    linear-gradient(180deg, var(--shell-top) 0%, var(--shell-top-secondary) 22%, var(--page-bg) 22%, var(--page-bg) 100%);
+  color: var(--text);
+}
+
+.page-frame {
+  position: relative;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition-duration: 300ms;
-  transition-property: height, opacity;
-  transition-timing-function: ease-out;
-  overflow: hidden;
+  transition: opacity 220ms ease, transform 220ms ease;
 }
 
-.fade-enter,
-.fade-leave-active {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
+  transform: translateY(10px);
 }
 </style>

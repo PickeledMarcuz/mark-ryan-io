@@ -1,48 +1,48 @@
 <template>
-  <footer class="mt-32 text-gray-700 bg-black border-t body-font">
-    <div class="bg-blueGray-900">
-      <div
-        class="container flex flex-col flex-wrap px-5 py-6 lg:px-20 sm:flex-row"
-      >
-        <div class="flex flex-wrap items-center justify-center text-base">
-          <p class="mr-5 text-sm text-center text-gray-200">
-            © {{ company }} — 2021
-          </p>
-          <a
-            href="#"
-            class="
-              justify-center
-              mr-5
-              text-sm text-center text-blueGray-200
-              hover:text-blue-700
-            "
-          >
-            Privacy Policy</a
-          >
-          <a
-            href="#"
-            class="
-              justify-center
-              mr-5
-              text-sm text-center text-blueGray-200
-              hover:text-blue-700
-            "
-          >
-            Terms Of Service</a
-          >
+  <footer class="footer-shell">
+    <div class="section-shell footer-grid">
+      <div>
+        <p class="footer-kicker">
+          Mark Ryan
+        </p>
+        <h2 class="footer-title">
+          Trusted for security, engineering leadership, and business-critical delivery.
+        </h2>
+        <p class="footer-copy">
+          I help organizations reduce risk, modernize software delivery, and make better
+          technology decisions with executive-level clarity.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer-label">
+          Navigate
+        </p>
+        <div class="footer-links">
+          <button class="footer-link" type="button" @click="$emit('navigate', '/')">Home</button>
+          <button class="footer-link" type="button" @click="$emit('navigate', '/about')">Profile</button>
+          <button class="footer-link" type="button" @click="$emit('navigate', '/services')">Advisory</button>
+          <button class="footer-link" type="button" @click="$emit('navigate', '/blog')">Insights</button>
         </div>
-        <span
-          class="
-            inline-flex
-            justify-center
-            mt-2
-            sm:ml-auto sm:mt-0 sm:justify-end
-          "
-        >
-          <p class="mr-5 text-sm text-center text-gray-200">
-            Working Remote Since 2020
-          </p>
-        </span>
+      </div>
+
+      <div>
+        <p class="footer-label">
+          Contact
+        </p>
+        <div class="footer-contact stack-sm">
+          <p>Available for advisory, technical leadership, and transformation engagements.</p>
+          <button class="footer-link" type="button" @click="$emit('navigate', '/contact')">
+            Start a conversation
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="section-shell footer-bottom__inner">
+        <p>© Mark Ryan. Built for trusted digital leadership.</p>
+        <p>Cybersecurity expert • Senior software engineer • Management consultant</p>
       </div>
     </div>
   </footer>
@@ -51,11 +51,94 @@
 <script>
 export default {
   name: 'MrioFooter',
-  props: {
-    company: String,
-  },
+  emits: ['navigate'],
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.footer-shell {
+  background: var(--footer-bg);
+  border-top: 1px solid var(--footer-border);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer-kicker,
+.footer-label {
+  color: var(--footer-kicker);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+
+.footer-title {
+  max-width: 28rem;
+  margin-top: 1rem;
+  color: var(--footer-title);
+  font-size: 1.5rem;
+  line-height: 1.35;
+}
+
+.footer-copy,
+.footer-contact {
+  margin-top: 1rem;
+  max-width: 34rem;
+  color: var(--footer-copy);
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+.footer-label {
+  color: var(--footer-label);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.footer-link {
+  padding: 0;
+  text-align: left;
+  color: var(--footer-link);
+  transition: color 160ms ease;
+}
+
+.footer-link:hover {
+  color: var(--brand-blue);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--footer-bottom-border);
+}
+
+.footer-bottom__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: var(--footer-meta);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 980px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom__inner {
+    flex-direction: column;
+  }
+}
+</style>

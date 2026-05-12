@@ -1,165 +1,80 @@
 <template>
-  <div class="blog">
-    <section class="text-gray-700 body-font">
-      <div class="container px-8 mx-auto py-36 lg:px-4">
-        <div class="flex flex-col w-full mb-12 text-left lg:text-center">
-          <h2
-            class="
-              mb-1
-              text-xs
-              font-semibold
-              tracking-widest
-              text-blue-600
-              uppercase
-              title-font
-            "
-          >
-            a great header right here
-          </h2>
-          <h1
-            class="
-              mb-6
-              text-2xl
-              font-semibold
-              tracking-tighter
-              text-blue-800
-              sm:text-6xl
-              title-font
-            "
-          >
-            A Long headline
-            <br class="" />
-            to convey your users.
-          </h1>
-          <p
-            class="
-              mx-auto
-              text-base
-              font-medium
-              leading-relaxed
-              text-gray-700
-              lg:w-1/2
-            "
-          >
-            Tailwind CSS templates with a wicked design. Professionally designed
-            and 100% responsive static templates for startups and personal
-            use.Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-            gentrify, subway tile poke farm-to-table. Franzen you probably
-            haven't heard of them man bun deep.
-          </p>
-        </div>
-      </div>
-    </section>
+  <section class="section-shell blog-page">
+    <section-intro
+      eyebrow="Insights"
+      title="Perspective on cyber risk, engineering strategy, and transformation."
+      copy="This section can evolve into articles, briefings, and executive notes. For now, it frames the themes your audience should expect from your point of view."
+      accent
+    />
 
-    <section class="text-gray-700 body-font">
-      <div class="container px-8 mx-auto py-36 lg:px-4">
-        <div class="flex flex-wrap text-left">
-          <div class="px-8 py-6 lg:w-1/4 md:w-full">
-            <img
-              class="object-cover object-center w-full h-40 mb-6 rounded"
-              src="https://dummyimage.com/720x400/F3F4F7/8693ac"
-              alt="content"
-            />
-            <h2
-              class="
-                mb-3
-                text-lg
-                font-semibold
-                text-gray-700
-                lg:text-2xl
-                title-font
-              "
-            >
-              Information 1
-            </h2>
-            <p class="mb-4 text-base leading-relaxed">
-              Fingerstache flexitarian street art 8-bit waistcoat. Distillery
-              hexagon disrupt edison bulbche.
-            </p>
-          </div>
-          <div class="px-8 py-6 lg:w-1/4 md:w-full">
-            <img
-              class="object-cover object-center w-full h-40 mb-6 rounded"
-              src="https://dummyimage.com/720x400/F3F4F7/8693ac"
-              alt="content"
-            />
-            <h2
-              class="
-                mb-3
-                text-lg
-                font-semibold
-                text-gray-700
-                lg:text-2xl
-                title-font
-              "
-            >
-              Information 2
-            </h2>
-            <p class="mb-4 text-base leading-relaxed">
-              Fingerstache flexitarian street art 8-bit waistcoat. Distillery
-              hexagon disrupt edison bulbche.
-            </p>
-          </div>
-          <div class="px-8 py-6 lg:w-1/4 md:w-full">
-            <img
-              class="object-cover object-center w-full h-40 mb-6 rounded"
-              src="https://dummyimage.com/720x400/F3F4F7/8693ac"
-              alt="content"
-            />
-            <h2
-              class="
-                mb-3
-                text-lg
-                font-semibold
-                text-gray-700
-                lg:text-2xl
-                title-font
-              "
-            >
-              Information 3
-            </h2>
-            <p class="mb-4 text-base leading-relaxed">
-              Fingerstache flexitarian street art 8-bit waistcoat. Distillery
-              hexagon disrupt edison bulbche.
-            </p>
-          </div>
-          <div class="px-8 py-6 lg:w-1/4 md:w-full">
-            <img
-              class="object-cover object-center w-full h-40 mb-6 rounded"
-              src="https://dummyimage.com/720x400/F3F4F7/8693ac"
-              alt="content"
-            />
-            <h2
-              class="
-                mb-3
-                text-lg
-                font-semibold
-                text-gray-700
-                lg:text-2xl
-                title-font
-              "
-            >
-              Information 4 > Information 4
-            </h2>
-
-            <p class="mb-4 text-base leading-relaxed">
-              Fingerstache flexitarian street art 8-bit waistcoat. Distillery
-              hexagon disrupt edison bulbche.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+    <div class="blog-grid">
+      <info-card
+        v-for="topic in topics"
+        :key="topic.eyebrow"
+        class="blog-card"
+        :eyebrow="topic.eyebrow"
+        :title="topic.title"
+        :body="topic.body"
+        :eyebrow-muted="true"
+      />
+    </div>
+  </section>
 </template>
 
 <script>
-// @ is an alias to /src
+import InfoCard from '../components/InfoCard.vue';
+import SectionIntro from '../components/SectionIntro.vue';
 
 export default {
   name: 'Blog',
-  components: {},
+  components: {
+    InfoCard,
+    SectionIntro,
+  },
+  data() {
+    return {
+      topics: [
+        {
+          eyebrow: 'Cybersecurity',
+          title: 'Security as an operational capability',
+          body: 'Writing on governance, controls, resilience, and how to build secure-by-design habits into delivery teams.',
+        },
+        {
+          eyebrow: 'Engineering',
+          title: 'Better systems, better technical decisions',
+          body: 'Commentary on architecture, modernization, reliability, and leadership patterns that help teams scale responsibly.',
+        },
+        {
+          eyebrow: 'Consulting',
+          title: 'Turning ambiguity into action',
+          body: 'Thought pieces on transformation, prioritization, and decision frameworks for complex technology environments.',
+        },
+      ],
+    };
+  },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.blog-page {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.blog-card {
+  padding: 2rem;
+}
+
+@media (max-width: 980px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
